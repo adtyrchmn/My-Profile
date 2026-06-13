@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Nama di kiri, foto di kanan */
+    align-items: center;
+    border-bottom: 2px solid #334e68;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.header-image img {
+    width: 120px;              
+    height: 120px;             
+    border-radius: 50%;        
+    object-fit: cover;         
+    border: 3px solid #334e68;
+}
+
+.header h1 {
+    color: #334e68;
+    font-size: 32px;
+}
+
+/* Tata Letak Konten Menggunakan Flexbox */
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.main-content {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 6px;
+    min-width: 250px;
+}
+
+/* Section & Tabel */
+.section {
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    color: #334e68;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+}
+
+.pengalaman-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.pengalaman-table th, .pengalaman-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.experience-table tr:hover {
+    background-color: #f1f1f1; /* Efek hover pada baris tabel */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;          /* Jarak antar kotak progress */
+    margin-top: 15px;
+}
+
+/* 2. Mengatur desain tampilan isi kotak latihan (Learning Item) */
+.project-item {
+    background-color: #fafafa;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #334e68; /* Memberikan aksen garis vertikal tebal di sisi kiri */
+    padding: 20px;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 3. Mengatur teks judul di dalam kotak */
+.project-item h3 {
+    color: #334e68;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* 4. Mengatur teks deskripsi di dalam kotak */
+.project-item p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* 5. Efek Interaktif: Kotak akan sedikit naik dan membayang saat disentuh kursor */
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}
+
+/* Komponen Sidebar (Kontak & Skills) */
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+    color: #334e68;
+    margin-bottom: 10px;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 27px;          /* Jarak antar logo icon */
+    margin-top: 10px;
+    font-size: 45px;    /* Mengatur ukuran besar logo */
+    margin-bottom: 50px;
+}
+
+/* Mengatur warna dasar logo */
+.contact-icon-link {
+    color: #334e68;     
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Efek hover saat kursor mouse menyentuh logo */
+.contact-icon-link:hover {
+    transform: scale(1.15); /* Logo membesar sedikit */
+    color: #0077b5;         
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 60px;
+}
+
+/* Tag Skill dengan animasi hover scale */
+.skill-tag {
+    background-color: #334e68;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.skill-tag:hover {
+    transform: scale(1.05); /* Efek membesar sedikit saat disentuh */
+    background-color: #243b53;
+}
+
+.tools-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* Mengatur ukuran huruf dasar dan jarak antar baris */
+.tools-item {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Mengatur jarak atas khusus untuk baris Aplikasi Coding (8px) */
+.item-medium {
+    margin-top: 8px;
+}
+
+/* Mengatur jarak atas khusus untuk baris Desain & Database (4px) */
+.item-small {
+    margin-top: 7px;
+}
+/* Responsif: Mengubah tata letak menjadi satu kolom pada layar kecil */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+}
